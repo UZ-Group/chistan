@@ -1,7 +1,13 @@
+@import url("./shabnam.css");
 * {
   margin: 0%;
   padding: 0%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: Shabnam; }
+
+a {
+  color: unset;
+  text-decoration: none; }
 
 body {
   background-color: #333333; }
@@ -15,5 +21,44 @@ body {
   border-bottom-right-radius: 25px; }
   .header img {
     width: 50px; }
+
+.riddlesList {
+  padding: 1rem;
+  margin-bottom: 10rem; }
+  .riddlesList .riddlesList_prev {
+    margin-bottom: 1rem; }
+    .riddlesList .riddlesList_prev h2 {
+      color: #ffd100;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem; }
+    .riddlesList .riddlesList_prev p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      padding: 0 0.5rem;
+      color: white; }
+  .riddlesList .riddlesList_det {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.7rem 0.5rem;
+    color: #ffd100; }
+    .riddlesList .riddlesList_det div:first-child {
+      display: flex;
+      align-items: flex-start; }
+      .riddlesList .riddlesList_det div:first-child span {
+        margin: 0 0.3rem;
+        line-height: 1.2; }
+      .riddlesList .riddlesList_det div:first-child svg {
+        width: 0.9rem;
+        height: 0.9rem; }
+    .riddlesList .riddlesList_det div:last-child {
+      display: flex;
+      align-items: flex-start; }
+      .riddlesList .riddlesList_det div:last-child span {
+        margin: 0 0.3rem; }
+      .riddlesList .riddlesList_det div:last-child svg {
+        width: 1.1rem;
+        height: 1.1rem; }
 
 /*# sourceMappingURL=main.css.map */

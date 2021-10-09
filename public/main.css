@@ -1,0 +1,19 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box; }
+
+body {
+  background-color: #333333; }
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #202020;
+  padding: 0.5rem;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px; }
+  .header img {
+    width: 50px; }
+
+/*# sourceMappingURL=main.css.map */

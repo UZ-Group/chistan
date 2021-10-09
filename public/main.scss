@@ -1,0 +1,26 @@
+// <Variables
+$colors: (main: #333333, second: #202020, gold: #ffd100, goldLight: #ffee32 , white: white, softGray: #d6d6d6);
+// Variables>
+
+// <initial styles
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+// initial styles>
+body {
+    background-color: map-get($colors, main );
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: map-get($colors, second );
+    padding: 0.5rem;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    img {
+        width: 50px;
+    }
+}

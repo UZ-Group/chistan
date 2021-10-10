@@ -1,6 +1,6 @@
 import React, {lazy} from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import RiddlePage from './components/RiddlePage';
+import Auth from './components/Auth';
 
 const App = () => {
 
@@ -11,7 +11,8 @@ const App = () => {
   return (
       <BrowserRouter>
         <Switch>
-          <Route path={`/Riddle-:id`} component={RiddlePage} />
+          <Route path={'/Riddle-:id'} component={RiddlePage}/>
+          <Route path={'/Auth'} component={Auth}/>
           <Route path={'/'} component={Home} />
         </Switch>
       </BrowserRouter>

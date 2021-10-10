@@ -9,6 +9,9 @@ a {
   color: unset;
   text-decoration: none; }
 
+button {
+  padding: 0%; }
+
 body {
   background-color: #333333; }
 
@@ -26,7 +29,9 @@ body {
   padding: 1rem;
   margin-bottom: 10rem; }
   .riddlesList .riddlesList_prev {
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center; }
     .riddlesList .riddlesList_prev h2 {
       color: #ffd100;
       font-size: 1.2rem;
@@ -37,7 +42,8 @@ body {
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       padding: 0 0.5rem;
-      color: white; }
+      color: white;
+      text-align: right; }
   .riddlesList .riddlesList_det {
     display: flex;
     justify-content: space-between;
@@ -45,7 +51,7 @@ body {
     color: #ffd100; }
     .riddlesList .riddlesList_det div:first-child {
       display: flex;
-      align-items: flex-start; }
+      align-items: baseline; }
       .riddlesList .riddlesList_det div:first-child span {
         margin: 0 0.3rem;
         line-height: 1.2; }
@@ -60,5 +66,52 @@ body {
       .riddlesList .riddlesList_det div:last-child svg {
         width: 1.1rem;
         height: 1.1rem; }
+
+.footer-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 1.5rem;
+  position: fixed;
+  bottom: 0rem;
+  background-color: #202020;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  align-items: center; }
+  .footer-menu button {
+    border-radius: 50%; }
+  .footer-menu .footer-menu__homeBtn button {
+    padding: 0%; }
+  .footer-menu .footer-menu__homeBtn svg {
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #ffd100;
+    border-radius: 50%;
+    padding: 1rem;
+    color: #ffd100; }
+  .footer-menu .footer-menu__profileBtn {
+    width: 3rem;
+    height: 3rem; }
+    .footer-menu .footer-menu__profileBtn button {
+      padding: 0%;
+      min-width: 0; }
+    .footer-menu .footer-menu__profileBtn svg {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      color: #ffd100;
+      border-radius: 50%; }
+  .footer-menu .footer-menu__menuBtn {
+    width: 2.1rem;
+    height: 2.1rem; }
+    .footer-menu .footer-menu__menuBtn button {
+      padding: 0%;
+      min-width: 0;
+      border-radius: 5px; }
+    .footer-menu .footer-menu__menuBtn svg {
+      width: 2.1rem;
+      height: 2.1rem;
+      color: #ffd100;
+      border-radius: 50%; }
 
 /*# sourceMappingURL=main.css.map */

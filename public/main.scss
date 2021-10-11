@@ -50,7 +50,16 @@ body {
     ::-webkit-scrollbar-thumb:hover {
         background-color: map-get($colors, goldLight);
     }
-// scroll> 
+// scroll>
+// <wating
+.wating {
+    margin: 5rem auto;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: map-get($colors,  Cgold);
+}
+// wating>
 // <header & footer
 .header {
     display: flex;
@@ -69,7 +78,7 @@ body {
     justify-content: space-around;
     padding: 1.5rem;
     position: fixed;
-    bottom: 0rem;
+    bottom: -2px;
     background-color: map-get($colors, second );
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
@@ -80,6 +89,9 @@ body {
     .footer-menu__homeBtn {
         button {
             padding: 0%;
+            a {
+                height: 80px;
+            }
         }
         svg {
             width: 5rem;
@@ -201,6 +213,7 @@ body {
 .riddle {
         .riddle-dets {
             padding: 1rem;
+            margin-bottom: 3rem;
         h1 {
             color: map-get($colors, Cgold);
         }
@@ -215,6 +228,7 @@ body {
             }
         }
         p {
+            margin-top: 3rem;
             font-size: 1rem;
             color: map-get($colors, Cwhite);
             line-height: 1.7;

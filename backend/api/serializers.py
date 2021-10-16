@@ -1,10 +1,12 @@
 from rest_framework import serializers
 from .models import Riddle, Comment
 
+
 class CommentSerializers(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = "__all__"
+
 
 class RiddleSerializers(serializers.ModelSerializer):
     def get_comments(self, obj):

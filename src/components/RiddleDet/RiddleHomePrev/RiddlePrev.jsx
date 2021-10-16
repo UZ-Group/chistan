@@ -8,7 +8,7 @@ function RiddlePrev({title, comments, date, text}) {
     return ( 
         <div className={'riddlesList_prev'}>
             <ButtonBase>
-                <Link to={`/Riddle-${3}`}>
+                <Link to={`/Riddle-${1}`}>
                     <h2>{title}</h2>
                     <p>{text}</p>
                     <div className={'riddlesList_det'}>

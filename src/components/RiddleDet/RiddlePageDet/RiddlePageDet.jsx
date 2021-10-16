@@ -2,7 +2,7 @@ import React from 'react';
 import { FaCalendar } from 'react-icons/fa';
 import { RiQuestionAnswerFill } from 'react-icons/ri';
 import { useLocation } from 'react-router';
-import {getAllRiddles} from '../../../api/api_riddle';
+import {getAllRiddlesID} from '../../../api/api_riddle';
 import PutAnswer from './PutAnswer';
 import RiddleAnswer from './RiddleAnswer';
 
@@ -10,36 +10,28 @@ import RiddleAnswer from './RiddleAnswer';
 function RiddlePageDet() {
 
     const   [getRiddle , setGetRiddle] = React.useState([]),
-            location = useLocation(),
-            [riddleDetail , setRiddleDetail] = React.useState([]);
+            location = useLocation();
 
-
+        const   spliting = location.pathname.split('/Riddle-'),
+        toNumber = Number(spliting[1]);
             
         React.useEffect(() => {
-        getAllRiddles ((isOk, data)=>{
+        getAllRiddlesID (toNumber,(isOk, data)=>{
                 if(!isOk) return alert(data);
                 else {
                     setGetRiddle(data)
-                    func(data)
                 };});
         }, [])
-        const   spliting = location.pathname.split('/Riddle-'),
-                toNumber = Number(spliting[1]);
-        const func = (data) => {
-            const filtering = data.filter((post,index)=> {
-                if(post.id === toNumber) return true;
-            })
-            setRiddleDetail(filtering[0])
-        }
-        console.log(riddleDetail)
+
+        console.log(getRiddle.comments);
 
     return (
         <div className={'riddle'}>
             <div className={'riddle-dets'}>
-                <h1>{riddleDetail && riddleDetail.title}</h1>
-                <div className={'riddle-dets__calender'}><FaCalendar/><span>{riddleDetail && riddleDetail.date}</span></div>
+                <h1>{getRiddle.title}</h1>
+                <div className={'riddle-dets__calender'}><FaCalendar/><span>{getRiddle.publish}</span></div>
                 <p>
-                    {riddleDetail && riddleDetail.text}
+                    {getRiddle.text}
                 </p>
             </div>
             <div className={'put-answer'}>
@@ -47,11 +39,11 @@ function RiddlePageDet() {
                 <PutAnswer/>
             </div>
             <div className={'answers-box'}>
-                <span><RiQuestionAnswerFill/>{riddleDetail && riddleDetail.answersCount}</span>
+                <span><RiQuestionAnswerFill/>{getRiddle.comments && getRiddle.comments.length}</span>
                 {
-                    riddleDetail && riddleDetail.answers && riddleDetail.answers.map(item=> {
+                    getRiddle.comments && getRiddle.comments.map(item=> {
                         return (
-                            <RiddleAnswer username={item.userName} date={item.date} like={item.like} dislike={item.dislike} text={item.text} />
+                            <RiddleAnswer username={item.user} date={item.updated} like={item.likes} dislike={item.dislikes} text={item.text} />
                         )
                     })
                 }

@@ -12,12 +12,24 @@ export const getAllRiddles = (callback) => {
 }
 
 // Swagger
+// <Riddles List 
 export const getAllRiddlesAPI = (callback) => {
     axiosInstanceAPI().get('riddle/')
     .then(response=> {
         callback(true, response.data);
     }).catch(error=>{
-        console.log(error)
+        // alert(error)
     })
 }
-getAllRiddlesAPI()
+// <Riddles List
+// <Riddles id
+export const getAllRiddlesID = (toNumber, callback) => {
+    axiosInstanceAPI().get(`riddle/${toNumber}/`)
+    .then(response=> {
+        callback(true, response.data);  
+    }).catch(error=>{
+        // alert(error)
+    })
+}
+getAllRiddlesID()
+// Riddles id>

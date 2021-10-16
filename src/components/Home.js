@@ -1,5 +1,5 @@
 import React from 'react';
-import {getAllRiddles} from '../api/api_riddle';
+import {getAllRiddlesAPI} from '../api/api_riddle';
 import Footer from './Header&Footer/Footer/footer';
 import Header from './Header&Footer/Header/Header';
 import RiddlesList from './layout/RiddlesList';
@@ -14,7 +14,7 @@ class Home extends React.Component {
     };
     componentDidMount() {
         // <get Riddles
-            getAllRiddles((isOk, data)=>{
+            getAllRiddlesAPI((isOk, data)=>{
                 if(!isOk) return alert(data);
                 else this.setState({riddlesList : data});
             })
@@ -22,7 +22,7 @@ class Home extends React.Component {
     }
     
     render() { 
-        console.log(this.state.riddlesList)
+        console.log(this.state.riddlesList);
         return (
         <div>
             <Header/>

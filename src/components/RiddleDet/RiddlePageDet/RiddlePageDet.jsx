@@ -23,7 +23,7 @@ function RiddlePageDet() {
                 };});
         }, [])
 
-        console.log(getRiddle.comments);
+        // console.log(getRiddle.comments);
 
     return (
         <div className={'riddle'}>
@@ -43,7 +43,7 @@ function RiddlePageDet() {
                 {
                     getRiddle.comments && getRiddle.comments.map(item=> {
                         return (
-                            <RiddleAnswer username={item.user} date={item.updated} like={item.likes} dislike={item.dislikes} text={item.text} />
+                            <RiddleAnswer username={item.user.username} date={item.updated} like={item.likes} dislike={item.dislikes} text={item.text} />
                         )
                     })
                 }

@@ -4,11 +4,11 @@ import { FaCalendar } from 'react-icons/fa';
 import { MdQuestionAnswer } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-function RiddlePrev({title, comments, date, text}) {
+function RiddlePrev({title, comments, date, text , id}) {
     return ( 
         <div className={'riddlesList_prev'}>
             <ButtonBase>
-                <Link to={`/Riddle-${1}`}>
+                <Link to={`/Riddle-${id}`}>
                     <h2>{title}</h2>
                     <p>{text}</p>
                     <div className={'riddlesList_det'}>

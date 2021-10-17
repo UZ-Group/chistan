@@ -3,6 +3,13 @@ from .models import Riddle, Comment
 
 
 class CommentSerializers(serializers.ModelSerializer):
+    def get_username(self, obj):
+        return {
+            "username": obj.user.username
+        }
+
+    user = serializers.SerializerMethodField("get_username")
+
     class Meta:
         model = Comment
         fields = "__all__"
@@ -18,4 +25,4 @@ class RiddleSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Riddle
-        fields = ['title', 'text', 'publish', 'created', 'updated', 'comments']
+        fields = ['id', 'title', 'text', 'publish', 'created', 'updated', 'comments']

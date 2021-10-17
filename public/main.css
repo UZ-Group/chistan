@@ -269,7 +269,8 @@ body {
     align-items: center;
     margin: 0 auto; }
     .riddle .answers-box {
-      max-width: 50rem; } }
+      align-self: flex-start;
+      margin-right: 6rem; } }
 .log-reg-box {
   max-width: 30rem;
   margin: 3rem auto; }

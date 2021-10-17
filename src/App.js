@@ -1,5 +1,6 @@
 import React, {lazy} from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Auth from './components/Auth';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
           <Route path={'/Auth'} component={Auth}/>
           <Route path={'/'} component={Home} />
         </Switch>
+        <ToastContainer />
       </BrowserRouter>
   );
 };

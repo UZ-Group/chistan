@@ -29,7 +29,7 @@ function RiddlePageDet() {
         <div className={'riddle'}>
             <div className={'riddle-dets'}>
                 <h1>{getRiddle.title}</h1>
-                <div className={'riddle-dets__calender'}><FaCalendar/><span>{getRiddle.publish}</span></div>
+                <div className={'riddle-dets__calender'}><FaCalendar/><span>{getRiddle.jpublish}</span></div>
                 <p>
                     {getRiddle.text}
                 </p>
@@ -43,7 +43,7 @@ function RiddlePageDet() {
                 {
                     getRiddle.comments && getRiddle.comments.map(item=> {
                         return (
-                            <RiddleAnswer username={item.user.username} date={item.updated} like={item.likes} dislike={item.dislikes} text={item.text} />
+                            <RiddleAnswer username={item.user.username} date={item.jcreated} like={item.likes} dislike={item.dislikes} text={item.text} />
                         )
                     })
                 }

@@ -345,7 +345,8 @@ body {
                 align-items: center;
                 margin: 0 auto;
                 .answers-box {
-                    max-width: 50rem;
+                    align-self: flex-start;
+                    margin-right: 6rem;
                 }
             }
         }

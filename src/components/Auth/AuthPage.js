@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { BsFillDoorOpenFill } from 'react-icons/bs';
 import { toast } from "react-toastify";
 import { postCreateUser } from "../../api/api_auth";
+import { axiosInstanceAPIpost } from "../../api/api";
 
 const   LOGIN_TAB_VALUE = 1,
         REG_TAB_VALUE = 2;
@@ -18,33 +19,32 @@ const AuthPage = () => {
     // <Create User
             // <set on reg states 
                 const   [userNameReg , setUserNameReg] = React.useState(),
-                        [emailReg , setEmailReg] = React.useState(),
+                        // [emailReg , setEmailReg] = React.useState(),
                         [passwordlReg , setPasswordReg] = React.useState(),
                         [confPasswordlReg , setConfPasswordReg] = React.useState();
-            // set on reg states> 
-            // <store in Object
+                        // set on reg states> 
+                        // <store in Object
                 const handelReg = () => {
                     const user = {
-                        "email": emailReg,
+                        // "email": emailReg,
                         "username": userNameReg,
                         "password": passwordlReg
                     }
                     function verifyReg(user) {
-                        console.log(user)
                         if(!user.username) return "نام کاربری خود را وارد کنید";
-                        if(!user.email) return "ایمیل خود را وارد کنید";
+                        // if(!user.email) return "ایمیل خود را وارد کنید";
                         if(!user.password) return "پسورد خود را وارد کنید";
                         if(!confPasswordlReg) return "پسورد خود را تکرار کنید";
                         if(confPasswordlReg !== passwordlReg) return "تکرار پسورد اشتباه است";
                     };
                     const error = verifyReg(user);
-                    if(error) return alert(error);
+                    if(error) return toast.warn(error);
                     postCreateUser(user, (isOk,data)=> {
-                        if(!isOk) return toast.error(data);
+                        if(!isOk) return toast.warn(data);
+                        toast.success(data)
                     })
-                }
+            }
             // store in Object>
-
     // Create User>
     return (
         <div className={'log-reg-box'}>
@@ -67,7 +67,7 @@ const AuthPage = () => {
                 value === REG_TAB_VALUE &&
                 <div className={'register'}>
                     <input placeholder={'نام کاربری'} value={userNameReg} onChange={e=> setUserNameReg(e.target.value)} />
-                    <input placeholder={'ایمیل'} type={'email'} value={emailReg} onChange={e=> setEmailReg(e.target.value)} />
+                    {/* <input placeholder={'ایمیل'} type={'email'} value={emailReg} onChange={e=> setEmailReg(e.target.value)} /> */}
                     <input placeholder={'رمز عبور'} type={'password'} value={passwordlReg} onChange={e=> setPasswordReg(e.target.value)} />
                     <input placeholder={'تکرار رمز عبور'} type={'password'} value={confPasswordlReg} onChange={e=> setConfPasswordReg(e.target.value)} />
                     <ButtonBase onClick={handelReg} >ثبت نام</ButtonBase>

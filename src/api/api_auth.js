@@ -13,3 +13,15 @@ export const postCreateUser = (user ,callback) => {
         })
 }
 // Create user>
+// <Login user
+export const postLoginUser = (user ,callback) => {
+    axiosInstanceAPIpost().post(`auth/token/login/`,user)
+    .then(response=> {
+        callback(true, response);
+    }).catch(error=>{
+        callback(false, error.response.data.non_field_errors[0]);
+        // console.log(error.response.data.non_field_errors[0])
+        
+    })
+}
+// Login user>

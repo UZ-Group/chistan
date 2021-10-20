@@ -65,11 +65,11 @@ body {
   align-items: center; }
   .footer-menu button {
     border-radius: 50%; }
-  .footer-menu .footer-menu__homeBtn button {
+  .footer-menu .footer-menu__homeBtn button, .footer-menu .footer-menu__AuthBtn button {
     padding: 0%; }
-    .footer-menu .footer-menu__homeBtn button a {
+    .footer-menu .footer-menu__homeBtn button a, .footer-menu .footer-menu__AuthBtn button a {
       height: 80px; }
-  .footer-menu .footer-menu__homeBtn svg {
+  .footer-menu .footer-menu__homeBtn svg, .footer-menu .footer-menu__AuthBtn svg {
     width: 5rem;
     height: 5rem;
     border: 1px solid #ffd100;

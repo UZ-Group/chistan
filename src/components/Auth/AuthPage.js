@@ -79,7 +79,6 @@ const AuthPage = ({history, match}) => {
                         if(!isOk) return toast.warn(data);
                         toast.success('ورود شما با موفقیت انجام شد');
                         localStorage.setItem("auth_token", data.data["auth_token"]);
-                        console.log(history, match)
                         history.push('/')
                     })
                     // Send request>

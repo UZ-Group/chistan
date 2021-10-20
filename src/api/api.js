@@ -29,3 +29,15 @@ export const axiosInstanceAPIpost = () => {
     })
 };
 
+export const axiosInstanceAPIanswer = () => {
+    return axios.create({
+        baseURL : "http://127.0.0.1:8000/api/",
+        headers : {
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+};
+
+
+
+// "Authorization": `Token 8dbd6ec8e60e62a5f3514c941e7a458f7ef86ad3`

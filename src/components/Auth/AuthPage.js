@@ -9,7 +9,7 @@ import { withRouter } from 'react-router';
 const   LOGIN_TAB_VALUE = 1,
         REG_TAB_VALUE = 2;
 
-const AuthPage = ({history, match}) => {
+const AuthPage = ({history}) => {
     // <Switch Tabs state 
     const   [value, setValue] = React.useState(LOGIN_TAB_VALUE),
             handleChange = (event, newValue) => {

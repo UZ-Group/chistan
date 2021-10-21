@@ -13,6 +13,7 @@ $colors: (main: #333333, second: #202020, Cgold: #ffd100, goldLight: #ffee32 , C
     box-sizing: border-box;
     font-family: Shabnam;
     outline: none;
+    list-style-type: none;
 }
 *:focus {
     outline: none;
@@ -60,6 +61,38 @@ body {
     color: map-get($colors,  Cgold);
 }
 // wating>
+// <Drawer
+.drawer-right {
+    .MuiDrawer-paper { //MUI ClassName
+        padding-top: 2rem !important;
+        border-bottom-left-radius: 1.5rem;
+        border-top-left-radius: 1.5rem;
+        background-color: map-get($colors, second) !important;
+        li button {
+            font-size: large;
+            color: map-get($colors,  Cwhite);
+            padding: 0.5rem 2rem;
+            svg {
+                margin-left: 0.5rem !important;
+            }
+        }
+    }
+}
+.drawer-left {
+    .MuiDrawer-paper { //MUI ClassName
+        padding-top: 2rem !important;
+        border-bottom-right-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+        background-color: map-get($colors, second) !important;
+        li button {
+            font-size: large;
+            color: map-get($colors,  Cwhite);
+            padding: 0.5rem 2rem;
+
+        }
+    }
+}
+// Drawer>
 // <header & footer
 .header {
     display: flex;
@@ -358,8 +391,13 @@ body {
                 align-items: center;
                 margin: 0 auto;
                 .answers-box {
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
                     align-self: flex-start;
-                    margin-right: 6rem;
+                    & > span {
+                        margin-right: 2rem;
+                    }
                 }
             }
         }

@@ -17,7 +17,7 @@ const App = () => {
           <Route path={'/Auth'} component={Auth}/>
           <Route path={'/'} component={Home} />
         </Switch>
-        <ToastContainer />
+        <ToastContainer position="top-center"/>
       </BrowserRouter>
   );
 };

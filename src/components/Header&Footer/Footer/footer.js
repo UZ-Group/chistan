@@ -17,7 +17,6 @@ export default class Footer extends Component {
                     </> : 
                     <AuthBtn/>
                 }
-
             </div>
         )
     }

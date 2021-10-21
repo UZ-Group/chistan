@@ -7,7 +7,8 @@
   padding: 0%;
   box-sizing: border-box;
   font-family: Shabnam;
-  outline: none; }
+  outline: none;
+  list-style-type: none; }
 
 *:focus {
   outline: none; }
@@ -41,6 +42,28 @@ body {
   text-align: center;
   font-size: 1.5rem;
   color: #ffd100; }
+
+.drawer-right .MuiDrawer-paper {
+  padding-top: 2rem !important;
+  border-bottom-left-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  background-color: #202020 !important; }
+  .drawer-right .MuiDrawer-paper li button {
+    font-size: large;
+    color: white;
+    padding: 0.5rem 2rem; }
+    .drawer-right .MuiDrawer-paper li button svg {
+      margin-left: 0.5rem !important; }
+
+.drawer-left .MuiDrawer-paper {
+  padding-top: 2rem !important;
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background-color: #202020 !important; }
+  .drawer-left .MuiDrawer-paper li button {
+    font-size: large;
+    color: white;
+    padding: 0.5rem 2rem; }
 
 .header {
   display: flex;
@@ -280,8 +303,12 @@ body {
     align-items: center;
     margin: 0 auto; }
     .riddle .answers-box {
-      align-self: flex-start;
-      margin-right: 6rem; } }
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-self: flex-start; }
+      .riddle .answers-box > span {
+        margin-right: 2rem; } }
 .log-reg-box {
   max-width: 30rem;
   margin: 3rem auto; }

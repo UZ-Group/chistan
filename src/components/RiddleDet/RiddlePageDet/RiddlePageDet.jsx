@@ -49,15 +49,11 @@ function RiddlePageDet() {
                         <p>برای مشاهده ی جواب های دیگران ابتدا <Link to='/Auth'>وارد</Link> شوید</p>
                     </div>
                      :
-                     <>
-                        {
-                            getRiddle.comments && getRiddle.comments.map(item=> {
-                                return (
-                                    <RiddleAnswer username={item.user.username} date={item.jcreated} like={item.likes} dislike={item.dislikes} text={item.text} />
-                                    )
-                            })
-                        }
-                    </>
+                    getRiddle.comments && getRiddle.comments.map(item=> {
+                        return (
+                            <RiddleAnswer username={item.user.username} date={item.jcreated} like={item.likes} dislike={item.dislikes} text={item.text} />
+                            )
+                    })
                 }
             </div>
         </div>

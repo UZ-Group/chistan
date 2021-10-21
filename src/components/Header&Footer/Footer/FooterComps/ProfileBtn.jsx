@@ -1,15 +1,36 @@
-import { Button } from '@material-ui/core';
+import { Button, ButtonBase } from '@material-ui/core';
 import React from 'react';
 import { HiUserCircle } from 'react-icons/hi';
+import { RiLoginCircleFill } from 'react-icons/ri';
+import { Drawer } from '@material-ui/core';
+import { withRouter } from 'react-router';
+import { toast } from 'react-toastify';
 
-function ProfileBtn() {
+function ProfileBtn({history}) {
+
+    const [handleDrawer, setHandleDrawer] = React.useState(false);
+
+    function logOut() {
+        localStorage.clear();
+        toast.info('با موفقیت از اکانت خود خارج شدید', {textAlign: 'right'})
+        history.push('/Auth')
+    }
+
     return (
         <div className={'footer-menu__profileBtn'}>
-            <Button>
+            <Button onClick={()=>setHandleDrawer(true)}>
                 <HiUserCircle/>
             </Button>
+            <Drawer className={'drawer-right'} anchor={'right'} open={handleDrawer} onClose={()=>setHandleDrawer(!handleDrawer)}>
+                <ul>
+                    <li>
+                        <ButtonBase onClick={logOut}><RiLoginCircleFill/>خروج</ButtonBase>
+                    </li>
+                </ul>
+            </Drawer>
         </div>
     )
 }
 
-export default ProfileBtn;
+
+export default withRouter(ProfileBtn);

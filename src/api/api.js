@@ -37,6 +37,14 @@ export const axiosInstanceAPIanswer = () => {
         }
     })
 };
+export const axiosInstanceLogout = () => {
+    return axios.create({
+        baseURL : "http://127.0.0.1:8000/api/",
+        headers : {
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+};
 
 
 

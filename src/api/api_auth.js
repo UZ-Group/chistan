@@ -1,4 +1,4 @@
-import { axiosInstanceAPIpost } from "./api";
+import { axiosInstanceAPIpost, axiosInstanceLogout } from "./api";
 
 // <Create user
 export const postCreateUser = (user ,callback) => {
@@ -22,3 +22,15 @@ export const postLoginUser = (user ,callback) => {
     })
 }
 // Login user>
+// <Logout user
+export const postLogoutUser = () => {
+    axiosInstanceLogout().post(`auth/token/logout/`)
+    .then(response=> {
+        // callback(true, response);
+        console.log(response)
+    }).catch(error=>{
+        // callback(false, error.response.data.non_field_errors[0]);
+        console.log(error.response)
+    })
+}
+// Logout user>

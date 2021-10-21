@@ -5,15 +5,17 @@ import { RiLoginCircleFill } from 'react-icons/ri';
 import { Drawer } from '@material-ui/core';
 import { withRouter } from 'react-router';
 import { toast } from 'react-toastify';
+import { postLogoutUser } from '../../../../api/api_auth';
 
 function ProfileBtn({history}) {
 
     const [handleDrawer, setHandleDrawer] = React.useState(false);
 
     function logOut() {
+        postLogoutUser();
         localStorage.clear();
-        toast.info('با موفقیت از اکانت خود خارج شدید', {textAlign: 'right'})
-        history.push('/Auth')
+        toast.info('با موفقیت از اکانت خود خارج شدید');
+        history.push('/Auth');
     }
 
     return (

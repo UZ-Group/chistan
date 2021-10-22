@@ -2,7 +2,9 @@ import React from 'react';
 import { ButtonBase } from '@material-ui/core';
 import { toast } from 'react-toastify';
 import { postAnswer } from '../../../api/api_answer';
-import { withRouter } from 'react-router';
+import { useLocation, withRouter } from 'react-router';
+import { getAllRiddlesID } from '../../../api/api_riddle';
+
 
 function PutAnswer({history}) {
 
@@ -14,13 +16,13 @@ function PutAnswer({history}) {
     function handelAnswer() {
         if(!answer) return toast.warn('پاسخ خود را ننوشته اید');
         const sendAnswer = {
+            "user": localStorage.getItem(['id']),
             "post": toNumber,
             "text": answer,
         }
-        console.log(sendAnswer)
         postAnswer(sendAnswer, (isOk, data)=> {
             if(!isOk) return toast.warn(data);
-            else return console.log(data)
+            else return console.log(data);
         })
     }
     return (

@@ -51,7 +51,7 @@ function RiddlePageDet() {
                      :
                     getRiddle.comments && getRiddle.comments.map(item=> {
                         return (
-                            <RiddleAnswer username={item.user.username} date={item.jcreated} like={item.likes} dislike={item.dislikes} text={item.text} />
+                            <RiddleAnswer username={item.username} date={item.jcreated} like={item.likes} dislike={item.dislikes} text={item.text} />
                             )
                     })
                 }

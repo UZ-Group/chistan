@@ -3,7 +3,7 @@ import { Typography, Tab, Tabs, ButtonBase} from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { BsFillDoorOpenFill } from 'react-icons/bs';
 import { toast } from "react-toastify";
-import { postCreateUser, postLoginUser } from "../../api/api_auth";
+import { getUserMe, postCreateUser, postLoginUser } from "../../api/api_auth";
 import { withRouter } from 'react-router';
 
 const   LOGIN_TAB_VALUE = 1,
@@ -79,6 +79,12 @@ const AuthPage = ({history}) => {
                         if(!isOk) return toast.warn(data);
                         toast.success('ورود شما با موفقیت انجام شد');
                         localStorage.setItem("auth_token", data.data["auth_token"]);
+                        // <get user Me
+                        getUserMe((isOk, data)=> {
+                            if(!isOk) return toast.warn(data);
+                            localStorage.setItem("id", data.data['id']);
+                        });
+                        // get user Me>
                         history.push('/')
                     })
                     // Send request>

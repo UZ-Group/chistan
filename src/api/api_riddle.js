@@ -26,10 +26,13 @@ export const getAllRiddlesAPI = (callback) => {
 export const getAllRiddlesID = (toNumber, callback) => {
     axiosInstanceAPI().get(`riddle/${toNumber}/`)
     .then(response=> {
-        callback(true, response.data);  
+        callback(true, response.data);
+        // console.log(response)
     }).catch(error=>{
-        // alert(error)
+        if(callback) {
+            callback(false ,error.response.data.detail)
+        }
+        // console.log(error.response.data.detail);
     })
 }
-getAllRiddlesID()
 // Riddles id>

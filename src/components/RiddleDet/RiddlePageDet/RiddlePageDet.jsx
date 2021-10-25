@@ -23,8 +23,15 @@ function RiddlePageDet() {
                     setGetRiddle(data)
                 };});
         }, [])
-
-        // console.log(getRiddle.comments);
+        // <updatePage 
+        const updatePage = ()=> {
+            getAllRiddlesID (toNumber,(isOk, data)=>{
+                if(!isOk) return alert(data);
+                else {
+                    setGetRiddle(data)
+                };});
+        }
+        // updatePage> 
 
     return (
         <div className={'riddle'}>
@@ -39,7 +46,7 @@ function RiddlePageDet() {
                 localStorage.getItem('auth_token') && 
                     <div className={'put-answer'}>
                         <span>جواب چیه ؟</span>
-                        <PutAnswer/>
+                        <PutAnswer updatePage={updatePage} />
                     </div>
                 }
             <div className={'answers-box'}>
@@ -51,7 +58,7 @@ function RiddlePageDet() {
                      :
                     getRiddle.comments && getRiddle.comments.map(item=> {
                         return (
-                            <RiddleAnswer username={item.username} date={item.jcreated} like={item.likes} dislike={item.dislikes} text={item.text} />
+                            <RiddleAnswer key={item.id} id={item.id} username={item.username} date={item.jcreated} like={item.likes} dislike={item.dislikes} text={item.text} updatePage={updatePage}/>
                             )
                     })
                 }

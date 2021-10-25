@@ -2,11 +2,10 @@ import React from 'react';
 import { ButtonBase } from '@material-ui/core';
 import { toast } from 'react-toastify';
 import { postAnswer } from '../../../api/api_answer';
-import { useLocation, withRouter } from 'react-router';
-import { getAllRiddlesID } from '../../../api/api_riddle';
+import { withRouter } from 'react-router';
 
 
-function PutAnswer({history}) {
+function PutAnswer({history, updatePage}) {
 
     const   [answer , setAnswer] = React.useState();
     
@@ -22,8 +21,10 @@ function PutAnswer({history}) {
         }
         postAnswer(sendAnswer, (isOk, data)=> {
             if(!isOk) return toast.warn(data);
-            else return console.log(data);
+            else return (toast.success(data), setAnswer(''));
         })
+        updatePage();
+        updatePage();
     }
     return (
         <div>

@@ -334,6 +334,7 @@ body {
     }
     .answer {
         margin: 1.5rem 0;
+        overflow: hidden;
         .answer__user {
             color: map-get($colors, goldLight);
             font-size: 1.1rem;
@@ -462,3 +463,38 @@ body {
     }
   }
 // Auth page>
+.about-us {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    margin-bottom: 10rem;
+    align-items: center;
+    max-width: 40rem;
+    padding: 1.3rem;
+    h1 {
+        text-align: center;
+        color: map-get($colors, Cgold);
+    }
+    p {
+        margin-top: 1rem;
+        color: map-get($colors, Cwhite);
+        text-align: justify;
+        line-height: 2;
+    }
+    .about-us__footer {
+        text-align: center;
+        margin-top: 1rem;
+        padding: 2rem;
+        background-color: rgba(255, 217, 0, 0.178);
+        border-radius: 20px;
+        span {
+            color: map-get($colors, Cwhite);
+        }
+        a {
+            font-style: italic;
+            font-size: larger;
+            color: map-get($colors, goldLight);
+            margin-top: 0.5rem;
+        }
+    }
+}

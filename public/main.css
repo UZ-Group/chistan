@@ -258,7 +258,8 @@ body {
       font-style: italic;
       font-weight: bold; }
 .riddle .answer {
-  margin: 1.5rem 0; }
+  margin: 1.5rem 0;
+  overflow: hidden; }
   .riddle .answer .answer__user {
     color: #ffee32;
     font-size: 1.1rem;
@@ -352,5 +353,35 @@ body {
       background-color: #ffd100; }
     .log-reg-box .log-reg .MuiTab-wrapper {
       color: white; }
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  margin-bottom: 10rem;
+  align-items: center;
+  max-width: 40rem;
+  padding: 1.3rem; }
+  .about-us h1 {
+    text-align: center;
+    color: #ffd100; }
+  .about-us p {
+    margin-top: 1rem;
+    color: white;
+    text-align: justify;
+    line-height: 2; }
+  .about-us .about-us__footer {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 2rem;
+    background-color: rgba(255, 217, 0, 0.178);
+    border-radius: 20px; }
+    .about-us .about-us__footer span {
+      color: white; }
+    .about-us .about-us__footer a {
+      font-style: italic;
+      font-size: larger;
+      color: #ffee32;
+      margin-top: 0.5rem; }
 
 /*# sourceMappingURL=main.css.map */

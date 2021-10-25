@@ -2,8 +2,9 @@ import { Button, ButtonBase } from '@material-ui/core';
 import React from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { Drawer } from '@material-ui/core';
+import { withRouter } from 'react-router';
 
-export default function MenuBtn() {
+function MenuBtn({history}) {
 
     const [handleDrawer, setHandleDrawer] = React.useState(false);
 
@@ -15,10 +16,11 @@ export default function MenuBtn() {
             <Drawer className={'drawer-left'} anchor={'left'} open={handleDrawer} onClose={()=>setHandleDrawer(!handleDrawer)}>
                 <ul>
                     <li>
-                        <ButtonBase>درباره ی ما</ButtonBase>
+                        <ButtonBase onClick={()=> history.push('/AboutUs')} >درباره ی سایت</ButtonBase>
                     </li>
                 </ul>
             </Drawer>
         </div>
     )
 };
+export default withRouter(MenuBtn);

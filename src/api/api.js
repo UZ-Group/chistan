@@ -45,6 +45,14 @@ export const axiosInstanceLogout = () => {
         }
     })
 };
+export const axiosInstancelike = () => {
+    return axios.create({
+        baseURL : "http://127.0.0.1:8000/api/comment/",
+        headers : {
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+};
 
 
 

@@ -18,7 +18,7 @@ export const postLoginUser = (user ,callback) => {
     axiosInstanceAPIpost().post(`auth/token/login/`,user)
     .then(response=> {
         callback(true, response);
-        // console.log(response)
+        console.log(response)
     }).catch(error=>{
         callback(false, error.response.data.non_field_errors[0]);
     })
@@ -28,10 +28,9 @@ export const postLoginUser = (user ,callback) => {
 export const postLogoutUser = () => {
     axiosInstanceLogout().post(`auth/token/logout/`)
     .then(response=> {
-        // callback(true, response);
-        console.log(response)
+        // callback(true, response);/
     }).catch(error=>{
-        // callback(false, error.response.data.non_field_errors[0]);
+        // callback(false, error.response);
         console.log(error.response)
     })
 }

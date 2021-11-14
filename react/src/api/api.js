@@ -23,15 +23,16 @@ export const axiosInstanceAPI = () => {
 
 export const axiosInstanceAPIpost = () => {
     return axios.create({
+        // baseURL : "http://127.0.0.1:8000/api/",
         baseURL : "https://chistan-shakur.fandogh.cloud/api/",
         headers : {
             "Content-Type": "application/json"
         }
     })
 };
-
 export const axiosInstanceAPIanswer = () => {
     return axios.create({
+        // baseURL : "http://127.0.0.1:8000/api/",
         baseURL : "https://chistan-shakur.fandogh.cloud/api/",
         headers : {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -40,6 +41,7 @@ export const axiosInstanceAPIanswer = () => {
 };
 export const axiosInstanceLogout = () => {
     return axios.create({
+        // baseURL : "http://127.0.0.1:8000/api/",
         baseURL : "https://chistan-shakur.fandogh.cloud/api/",
         headers : {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`

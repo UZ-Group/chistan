@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3+nwv_deb#@rpswu_bh1#kb720^4_dv2f2z8-m4+j@3_!adh8l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['chistan-shakur.fandogh.cloud']
-
+ALLOWED_HOSTS = ['chistan-shakur.fandogh.cloud', '127.0.0.1']
 
 # Application definition
 
